@@ -139,6 +139,59 @@ for (let i = 1; i <= 10; i++) { // pasa al siguiente valor de i una vez se cumpl
     }
 }
 
+/*  --------------------------------------------------------- SWITCH */
+
+//Permite ejecutar diferentes bloques de codigo dependiendo del valor de una expresión.
+
+const dia = "miercoles"
+
+switch (dia) {
+
+    case "lunes":
+        console.log("Hoy es lunes :(")
+        break
+
+    case "miercoles":
+        console.log("Mitad de semana :D")
+        break
+
+    default: // Opcional
+        console.log("Hoy no es lunes!")
+        break
+
+}
+
+const queDiaEs = new Date().getDay() // getDay extrae el dia de la semana del objeto Date // extrae un numero del 0 (domingo) al 6 (sabado)
+console.log(queDiaEs) // 5 = viernes
+
+switch (queDiaEs) {
+
+    case 0:
+        console.log("Hoy es domingo");
+        break; // No olvidar aplicar break despues de cada caso
+    case 1:
+        console.log("Hoy es lunes");
+        break;
+    case 2:
+        console.log("Hoy es martes");
+        break;
+    case 3:
+        console.log("Hoy es miércoles");
+        break;
+    case 4:
+        console.log("Hoy es jueves");
+        break;
+    case 5:
+        console.log("Hoy es viernes");
+        break;
+    case 6:
+        console.log("Hoy es sábado");
+        break;
+}
+
+
+
+
 
 
 
