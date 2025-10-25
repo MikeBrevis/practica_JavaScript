@@ -63,7 +63,7 @@ console.log("La suma de ambos numeros es " + resultadoResta)
 
 // Funciones como parametro
 
-function sumar(a, b) { 
+function sumar(a, b) {
     return a + b
 }
 
@@ -89,3 +89,32 @@ function calcular(num1, num2, operacion) {
 calcular(5, 3, sumar)       // El resultado es: 8
 calcular(5, 3, multiplicar) // El resultado es: 15
 calcular(5, 3, restar)      // El resultado es: 2
+
+//Ejercicios
+
+function decirAdios() {
+    return "Adios!"
+}
+
+const miFn = decirAdios // se pasa la referencia a la funcion
+
+console.log(decirAdios())
+console.log(miFn())
+
+// funcion a otra funcion 
+
+function dup(n) {
+    return n*2
+}
+
+function div(n) {
+    return n/2
+}
+
+function aplicarYMostrar(valor, operacion) { 
+    const r = operacion(valor) // La funcion llega como argumento desde afuera
+    console.log("Resultado:", r)
+}
+
+aplicarYMostrar (4, dup)
+
