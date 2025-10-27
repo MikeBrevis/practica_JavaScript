@@ -194,5 +194,60 @@ function factorial(n) {
 
     }
 }
-
 console.log(factorial(5)) // Resultado: 120
+
+/*  --------------------------------------------------------- SCOPE */
+
+let global = 'Soy global'
+
+function externa() {
+    let externa_var = 'Soy de la función externa'
+
+    function interna() {
+        let interna_var = 'Soy de la función interna'
+
+        // Puede acceder a todas:
+        console.log(interna_var)  // "Soy de la función interna"
+        console.log(externa_var)  // "Soy de la función externa"  
+        console.log(global)       // "Soy global"
+    }
+
+    // Aquí sólo puedes acceder a "externa_var" y "global"
+    interna()
+    // console.log(interna_var) // ❌ Error: no puede acceder
+}
+
+// Aquí sólo puedes acceder a la variable "global"
+externa()
+
+/*  --------------------------------------------------------- CLOSURES */
+
+// ✅ Closure - datos protegidos
+function crearContador() {
+    let contador = 0 // Variable privada
+
+    return {
+        incrementar: function () {
+            contador++
+            return contador
+        },
+        decrementar: function () {
+            contador--
+            return contador
+        },
+        obtenerValor: function () {
+            return contador
+        }
+    }
+}
+
+const miContador = crearContador()
+
+console.log(miContador.incrementar()) // 1
+console.log(miContador.incrementar()) // 2
+console.log(miContador.decrementar()) // 1
+
+// No podemos acceder directamente a 'contador'
+// miContador.contador = 1000 // No funciona
+
+
