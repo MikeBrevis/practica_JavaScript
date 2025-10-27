@@ -104,17 +104,95 @@ console.log(miFn())
 // funcion a otra funcion 
 
 function dup(n) {
-    return n*2
+    return n * 2
 }
 
 function div(n) {
-    return n/2
+    return n / 2
 }
 
-function aplicarYMostrar(valor, operacion) { 
+function aplicarYMostrar(valor, operacion) {
     const r = operacion(valor) // La funcion llega como argumento desde afuera
     console.log("Resultado:", r)
 }
 
-aplicarYMostrar (4, dup)
+aplicarYMostrar(4, dup)
 
+/*  --------------------------------------------------------- FUNCIONES ANONIMAS COMO PARAMETROS */
+
+// Función anónima pasada directamente
+calcular(10, 2, function (a, b) {
+    return a / b
+})
+// El resultado es: 5
+
+// O usando funciones flecha (las veremos más adelante)
+calcular(4, 3, (a, b) => a ** b) // El resultado es: 64 (4 elevado a 3)
+
+/*  --------------------------------------------------------- FUNCIONES EXPRESSION */
+
+const funtionExpressionSum = function (a, b) {
+    return a + b
+} // No es necesario darle un nombre a la funcion
+
+console.log(funtionExpressionSum(1, 2))
+
+/*  --------------------------------------------------------- FUNCIONES FLECHA */
+
+// sintaxis basica
+// Son siempre anonimas y expression, es decir, que no tiene  nombre y se le asigna una variable
+
+const miArrowFuntion = () => {
+    // codigo a ejecutar
+}
+
+// return implicito: cuando se tiene solo una expresion, se pueden omitir las llaves y la palabra return
+
+// Declaración de función regular
+function sumar(a, b) {
+    return a + b
+}
+
+// Función flecha
+const sumarFlecha = (a, b) => {
+    return a + b
+}
+
+// Función flecha con return implícito
+const sumarFlechaIm = (a, b) => a + b
+
+/*  --------------------------------------------------------- RECURSIVIDAD */
+
+// tecnica en donde una funcion se llame a si misma
+
+function cuentaAtras(numero) {
+    // Condición base: Si el número que recibe es // Es importante tener SIEMPRE una condicion base, de no ser asi, la funcion se llamara infinitamente
+    // menor de 0 entonces salimos de la función
+    if (numero <= 0) {
+        return
+    }
+
+    // Si el número era mayor o igual a 0, lo mostramos
+    console.log(numero)
+
+    // Y llamamos a la función con el número anterior
+    cuentaAtras(numero - 1)
+}
+
+cuentaAtras(8)
+
+// Ejemplo de recursividad devolviendo un valor
+
+function factorial(n) {
+    // Condición base: Si el número es 0 o 1, devolvemos 1
+    // y no llamamos a la función de nuevo
+    if (n === 0 || n === 1) {
+        return 1
+    } else {
+        // Si el número es mayor que 1, llamamos a la función
+        return n * factorial(n - 1)
+
+    }
+}
+
+console.log(factorial(5)) // Resultado: 120
