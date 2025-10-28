@@ -88,5 +88,47 @@ console.log(pedido1) // [ 'bebida', 'pizza', 'empanada', 'Marco' ]
 
 /*  --------------------------------------------------------- Iteración de Arrays en JavaScript  */
 
+let bebidas = ["agua", "cafe", "vino", "energetica"]
 
+// Bucle WHILE 
+let i = 0
+while (i < bebidas.length) { // .length = 4
+    console.log(bebidas[i])
+    i++
+}
 
+// Bucle FOR 
+for (let x = 0; x < bebidas.length; x++) {
+    console.log(bebidas[x])
+}
+
+// Bucle FOR ...OF
+for (let bebida of bebidas) { // no se necesita crear una variable, recorre los elementos del array
+    console.log("tomate un " + bebida)
+}
+
+/*no podemos usarlo para recorrer un array en orden inverso y tampoco tenemos acceso al índice del elemento que estamos iterando.*/
+
+// array.forEach()
+bebidas.forEach(function (bebida, index, originalArray) { // recibe como parámetros el elemento que se está iterando en ese momento, el índice del elemento y el propio array.
+    console.log(bebida, index, originalArray)
+})
+
+// array.forEach() con arrow funtion
+bebidas.forEach((bebida, index) => {
+    console.log("arrow funtion " + bebida, index)
+})
+
+/*  --------------------------------------------------------- EJERCICIO PRACTICO */
+
+function sumarPares(numeros) {
+    let suma = 0
+    for (let x = 0; x < numeros.length; x++) {
+        if (numeros[x] % 2 == 0) { 
+            suma += numeros[x]
+        }
+    }
+    return suma
+}
+
+console.log(sumarPares([1, 2, 3, 4, 5, 6])) // suma pares = 12
