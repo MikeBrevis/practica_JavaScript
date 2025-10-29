@@ -124,7 +124,7 @@ bebidas.forEach((bebida, index) => {
 function sumarPares(numeros) {
     let suma = 0
     for (let x = 0; x < numeros.length; x++) {
-        if (numeros[x] % 2 == 0) { 
+        if (numeros[x] % 2 == 0) {
             suma += numeros[x]
         }
     }
@@ -132,3 +132,56 @@ function sumarPares(numeros) {
 }
 
 console.log(sumarPares([1, 2, 3, 4, 5, 6])) // suma pares = 12
+
+/*  --------------------------------------------------------- BUSQUEDA EN ARRAY CON METODOS */
+
+const personas = ['daniel', 'diego', 'marcelo', 'cristo']
+
+// indexOf
+// Position = personas.indexOf('diego')
+const diegoPosition = personas.indexOf('diego')
+console.log('la posicion de diego es ' + diegoPosition)
+
+// includes
+// Determina si un elemento existe o no, devolviendo un booleano
+// Se puede usar para buscar una subcadena dentro de una cadena de texto: 'Hola mundo'.includes('Hola') // -> true
+const marceloincludes = personas.includes('marcelo')
+console.log(`marcelo existe? ${marceloincludes}`)
+
+// Some
+// Verifica si al menos un elemento del array cumple una condicion
+
+const shortNames = ['leo', 'isa', 'ian']
+
+const nombreLargo = shortNames.some(name => name.length > 3) // se le da una funcion con cada uno de los string, si uno cumple con la condicion, da true
+console.log('cumple? ' + nombreLargo) // false
+
+// Every
+// Verifica si todos los elementos cumplen con la condicion
+
+//¿Todos los elementos tienen 3 caracteres de largo?
+const leghtNames = shortNames.every(name => name.length == 3) // Todos cumplen 
+console.log('cumple? ' + leghtNames) // true
+
+// ¿Todos los números son pares?
+const parNumbers = [2, 4, 7, 10, 12]
+const todosSonPares = parNumbers.every(number => number % 2 === 0)
+console.log("todos son pares? " + todosSonPares) // -> false
+
+// Find
+// Encuentra el primer elemento y lo devuelve
+
+const findNumbers = [2, 4, -1, 7]
+const findNegativeNumber = findNumbers.find(number => number < 0)
+console.log(findNegativeNumber) // -1
+
+// FindIndex
+// Devuelve el indice del primer elemento que cumple la condicion
+
+const findImpar = findNumbers.findIndex(impar => impar % 2 == 1)
+console.log(findImpar) // 1 (primer valor impar = 7)
+
+// endsWith
+// determina si una cadena de texto termina termina con los caracteres indicados
+const str1 = "Cats are the best!";
+console.log(str1.endsWith("best!")); //true
