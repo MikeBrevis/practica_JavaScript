@@ -68,7 +68,7 @@ console.log("Se rompe cuando llega a 5")
 let numeroWhile3 = 10
 
 while (numeroWhile3 > 0) {
-    numeroWhile3--
+    numeroWhile3 --
 
     if (numeroWhile3 % 2 == 0) { // omite todos los numero pares
         continue

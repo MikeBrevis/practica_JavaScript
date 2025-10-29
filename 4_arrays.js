@@ -185,3 +185,43 @@ console.log(findImpar) // 1 (primer valor impar = 7)
 // determina si una cadena de texto termina termina con los caracteres indicados
 const str1 = "Cats are the best!";
 console.log(str1.endsWith("best!")); //true
+
+
+/*  --------------------------------------------------------- EJERCICIO PRACTICO */
+// función que reciba un array de palabras y devuelva true si todas las palabras terminan con la letra "a" y false si al menos una palabra no termina con la letra "a".
+function acabanEnA(words) {
+    return words.every(letter => letter.endsWith("a"))
+}
+
+console.log(acabanEnA(["ane", "maria", "juana"])) // false
+
+/*  --------------------------------------------------------- Ordenamiento de Arrays */
+
+const ordNumeros = [5, 10, 2, 25, 7]
+
+ordNumeros.sort()
+console.log(ordNumeros) // convierte los numeros a texto y los ordena alfabeticamente // [ 10, 2, 25, 5, 7 ]
+
+// Ordenamiento personalizado con sort
+
+/*
+Si a - b < 0 → a va antes que b
+Si a - b > 0 → a va después de b
+Si a - b === 0 → son iguales
+*/
+
+const numOrdenAsc = ordNumeros.sort((a, b) => a - b) // [ 2, 5, 7, 10, 25 ]
+console.log(numOrdenAsc)
+
+const numOrdenDesc = ordNumeros.sort((a, b) => b - a) // [ 25, 10, 7, 5, 2 ]
+console.log(numOrdenDesc)
+
+/*  --------------------------------------------------------- EJERCICIO PRACTICO */
+/* Recibes una lista de números. Debes ordenar los números de menor a mayor según su valor absoluto. Eso quiere decir que los números negativos pierden el signo y se ordenan como si fueran positivos */
+
+
+function posNegNumbers(numbers) {
+    const ordenNumbers = numbers.sort((a, b) => Math.abs(a) - Math.abs(b))
+    return ordenNumbers
+}
+console.log(posNegNumbers([-5, 10, -22, 25, -7])) // [ -5, -7, 10, -22, 25 ]
