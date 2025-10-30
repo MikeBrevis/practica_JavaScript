@@ -225,3 +225,30 @@ function posNegNumbers(numbers) {
     return ordenNumbers
 }
 console.log(posNegNumbers([-5, 10, -22, 25, -7])) // [ -5, -7, 10, -22, 25 ]
+
+
+/*  --------------------------------------------------------- TRANSFORMACIÓN DE UN ARRAY */
+
+// Filter
+// Nuevo array con elementos que cumplan una condición
+
+// array que filtra solo los pares
+const numbersFilter = [1, 2, 3, 4, 5, 6]
+const numbersFilterPar = numbersFilter.filter (number => number % 2 == 0)
+console.log(numbersFilterPar)
+
+// array que conserva todas las cadenas de texto que tengan "a"
+
+const strings = ['hola', 'adiós', 'casa', 'coche', 'perro', 'gato']
+const stringsWithA = strings.filter(String => String.includes('a'))
+console.log(stringsWithA)
+
+//Map
+// Nuevo array de la misma longitud que el original, pero transformados por una funcion
+
+//Nuevo array con el doble del valor de cada numero
+const newNumberList = [1, 2, 3, 4, 5, 6]
+const doubleNumbers = newNumberList.map(number => number * 3)
+console.log(doubleNumbers)
+
+
