@@ -251,4 +251,7 @@ const newNumberList = [1, 2, 3, 4, 5, 6]
 const doubleNumbers = newNumberList.map(number => number * 3)
 console.log(doubleNumbers)
 
+//Mao + filter
+// Nuevo array con los elementos transformados y filtrados
+
 
