@@ -234,7 +234,7 @@ console.log(posNegNumbers([-5, 10, -22, 25, -7])) // [ -5, -7, 10, -22, 25 ]
 
 // array que filtra solo los pares
 const numbersFilter = [1, 2, 3, 4, 5, 6]
-const numbersFilterPar = numbersFilter.filter (number => number % 2 == 0)
+const numbersFilterPar = numbersFilter.filter(number => number % 2 == 0)
 console.log(numbersFilterPar)
 
 // array que conserva todas las cadenas de texto que tengan "a"
@@ -251,7 +251,60 @@ const newNumberList = [1, 2, 3, 4, 5, 6]
 const doubleNumbers = newNumberList.map(number => number * 3)
 console.log(doubleNumbers)
 
-//Mao + filter
+/*  --------------------------------------------------------- ENCADENAMIENTO DE METODOS */
+
+//Map + filter
 // Nuevo array con los elementos transformados y filtrados
 
+const numbersEnc = [1, 2, 3, 4, 5, 6, 7]
+
+const newNumbers = numbersEnc
+    .map(number => number * 2) //[2, 4, 6, 8, 10, 12, 14]
+    .filter(number => number > 5) //[6, 8, 10, 12, 14]
+
+console.log(newNumbers)
+
+/*  --------------------------------------------------------- REDUCE */
+const sumArray = numbersEnc.reduce((acumulador, actualNum) => {
+    return acumulador + actualNum
+}, 0) // <- el 0 es el valor inicial
+// 0 + 1 = 1
+// 1 + 2 = 3
+// 3 + 3 = 6 ...
+console.log(sumArray) // 28
+
+
+// ejemplo: queremos doblar los números pares y sólo quedarnos con los mayores de 5.
+
+let numbersEj = [1, 2, 3, 4, 5, 6, 7]
+
+const doubleEvenNumbers = numbersEj.reduce((acum, numero) => {
+    const isEven = numero % 2 == 0 // Filtra el numero si es par
+    const doubled = numero * 2 // dobla el numero
+    const greaterFive = doubled > 5 // filtra si es mayor que 5
+
+    if (isEven && greaterFive) {
+        return acum.concat(doubled)
+    } else {
+        return acum
+    }
+
+}, []) // <- el array vacío es el valor inicial
+
+console.log(doubleEvenNumbers) // [ 8, 12 ]
+
+/*  --------------------------------------------------------- EJERCICIO PRACTICO
+Recibes dos parámetros: una lista de palabras words y una palabra word. Primero, busca el índice de la palabra en la lista. Después, usa ese índice (que será un número) y devuelve todas las palabras de words que sean más largas (length) que el número del índice.
+ */
+
+function buscaPalabras(words, word) {
+    const findWord = words.findIndex(elemento => elemento == word)
+    console.log(typeof findWord, findWord)
+
+    const lengthWords = words.filter(elemento => elemento.length > findWord)
+
+    return lengthWords
+}
+
+console.log(buscaPalabras(["te", "perro", "gato", "auto", "casa", "do", "perro"], "auto"))
 
