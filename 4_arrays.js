@@ -308,3 +308,76 @@ function buscaPalabras(words, word) {
 
 console.log(buscaPalabras(["te", "perro", "gato", "auto", "casa", "do", "perro"], "auto"))
 
+/*  --------------------------------------------------------- MATRICES */
+//Coleccion de elementos dispuestos en filas y columnas. 
+
+const matriz = [
+    [1, 2, 3, 4],
+    [4, 5, 6]
+]
+
+// Acceso a una matriz
+let numero = matriz[1][2] //[1] = Segunda fila; [2] = tercera columna
+console.log("el numero del array es " + numero) //6
+
+// Iteracón sobre matrices
+for (let i = 0; i < matriz.length; i++) { //{1}
+    for (let j = 0; j < matriz[i].length; j++) { //{1}
+        console.log(matriz[i][j])
+    }
+}
+
+// Ejemplo practico de matrices
+
+const tablero = [
+    ['O', 'X', 'X'],
+    ['X', 'X', '0'],
+    ['X', 'O', 'O']
+]
+
+// Verifica las líneas horizontales
+for (let i = 0; i < 3; i++) {
+    if (
+        tablero[i][0] === tablero[i][1] &&
+        tablero[i][1] === tablero[i][2]
+    ) {
+        console.log(`El ganador es: ${tablero[i][0]}`);
+    } else {
+        console.log("No hay ganador en la linea horizontal " + tablero[i]);
+    }
+}
+
+// Verifica las lineas verticales
+for (let i = 0; i < 3; i++) {
+    if (
+        tablero[0][i] == tablero[1][i] &&
+        tablero[1][i] == tablero[2][i]
+    ) {
+        console.log(`El ganador es: ${tablero[0][i]}`);
+    } else {
+        console.log("No hay ganador en la linea vertical " + tablero[i]);
+    }
+}
+
+// Verifica las diagonal de arriba izquierda a derecha abajo
+if (
+    tablero[0][0] == tablero[1][1] &&
+    tablero[1][1] == tablero[2][2] 
+) { 
+    console.log(`El ganador es: ${tablero[0][0]}`);
+} else {
+    console.log("No hay ganador en la linea diagonal de arriba izquierda a derecha abajo " + tablero[i]);
+}
+
+// Verifica las diagonal de arriba derecha a izquierda abajo
+if (
+    tablero[0][2] == tablero[1][1] &&
+    tablero[1][1] == tablero[2][0] 
+) { 
+    console.log(`El ganador es: ${tablero[0][2]}`);
+} else {
+    console.log("No hay ganador en la linea diagonal de arriba derecha a derecha izquierda " + tablero[i]);
+}
+
+
+
