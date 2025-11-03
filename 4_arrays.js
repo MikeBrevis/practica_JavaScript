@@ -362,8 +362,8 @@ for (let i = 0; i < 3; i++) {
 // Verifica las diagonal de arriba izquierda a derecha abajo
 if (
     tablero[0][0] == tablero[1][1] &&
-    tablero[1][1] == tablero[2][2] 
-) { 
+    tablero[1][1] == tablero[2][2]
+) {
     console.log(`El ganador es: ${tablero[0][0]}`);
 } else {
     console.log("No hay ganador en la linea diagonal de arriba izquierda a derecha abajo " + tablero[i]);
@@ -372,12 +372,37 @@ if (
 // Verifica las diagonal de arriba derecha a izquierda abajo
 if (
     tablero[0][2] == tablero[1][1] &&
-    tablero[1][1] == tablero[2][0] 
-) { 
+    tablero[1][1] == tablero[2][0]
+) {
     console.log(`El ganador es: ${tablero[0][2]}`);
 } else {
     console.log("No hay ganador en la linea diagonal de arriba derecha a derecha izquierda " + tablero[i]);
 }
 
+/*  --------------------------------------------------------- EJERCICIO PRACTICO
+Recibimos una matriz de cadenas de texto. Tenemos que localizar la posición de la palabra "JavaScript" en la matriz y devolver su posición como un array de dos elementos: el índice de la fila y el índice de la columna.
+ */
+
+const matrix = [['HTML', 'CSS', 'JS'], ['Java', 'C++','JavaScript', 'Python'], ['Ruby', 'Swift']]
+
+console.log("el largo de la cadena es " + matrix.length)
+
+function findJavaScript(matrix) {
+    const positions = [];
+
+    for (let i = 0; i < matrix.length; i++) {
+
+        const j = matrix[i].indexOf('JavaScript');
+        if (j !== -1) {
+            positions.push(i, j)
+            return positions;
+        }
+    }
+    return [-1, -1]
+}
+
+console.log(findJavaScript(matrix)); // [[2,1]]
+
+// REVISAR Y HACERLO POR CUENTA DE UNO!
 
 
