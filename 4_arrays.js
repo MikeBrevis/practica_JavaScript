@@ -383,15 +383,11 @@ if (
 Recibimos una matriz de cadenas de texto. Tenemos que localizar la posición de la palabra "JavaScript" en la matriz y devolver su posición como un array de dos elementos: el índice de la fila y el índice de la columna.
  */
 
-const matrix = [['HTML', 'CSS', 'JS'], ['Java', 'C++','JavaScript', 'Python'], ['Ruby', 'Swift']]
-
-console.log("el largo de la cadena es " + matrix.length)
+const matrix = [['HTML', 'CSS', 'JS'], ['Java', 'C++', 'JavaScript', 'Python'], ['Ruby', 'Swift']]
 
 function findJavaScript(matrix) {
     const positions = [];
-
     for (let i = 0; i < matrix.length; i++) {
-
         const j = matrix[i].indexOf('JavaScript');
         if (j !== -1) {
             positions.push(i, j)
@@ -400,9 +396,125 @@ function findJavaScript(matrix) {
     }
     return [-1, -1]
 }
-
 console.log(findJavaScript(matrix)); // [[2,1]]
 
 // REVISAR Y HACERLO POR CUENTA DE UNO!
+
+/*  --------------------------------------------------------- ALGORITMOS CON ARRAYS */
+
+//ALGORITMO PARA ENCONTRAR UN NUMERO MAYOR
+const numberlistH = [32, 5, 502, 41, 12, 77, 64, 3, 59, 14, 88, 26, 47, 90, 53]
+
+function findMaxNumber(numberlistH) {
+    let numberMax = numberlistH[0]
+
+    for (i = 1; i < numberlistH.length; i++) {
+        if (numberlistH[i] > numberMax) {
+            numberMax = numberlistH[i]
+        }
+    }
+    return numberMax
+}
+
+console.log(findMaxNumber(numberlistH)) // 502
+
+//Mismo resultado usando el metodo Math.max
+console.log(Math.max(32, 5, 98, 41, 12, 77, 64, 3, 59, 14, 88, 26, 47, 90, 53)) // 98
+
+//Encontrar el numero 77 dentro del array
+function find77Number(numberlistH) {
+
+    for (i = 1; i < numberlistH.length; i++) {
+        if (numberlistH[i] == 77) {
+            console.log("El numero " + numberlistH[i] + " si esta en la lista")
+        }
+    }
+    return false
+}
+
+console.log(find77Number(numberlistH))
+
+//BUSQUEDA BINARIA
+//Para aplicar la búsqueda binaria, tenemos que tener en cuenta que el array tiene que estar ordenado de menor a mayor. Si no, no funcionará.
+
+function busquedaBinaria(array, elemento) {
+    let index = 0 // primer elemento del array
+    let final = array.length - 1 // último elemento del array a buscar
+
+    // mientras el índice sea menor o igual que el final
+    // seguiremos buscando
+    while (index <= final) {
+        // calculamos la mitad del array
+        // como puede ser impar, usamos Math.floor para redondear hacia abajo
+        const mitad = Math.floor((index + final) / 2)
+
+        // si el elemento de la mitad es igual al elemento que estamos buscando
+        // entonces hemos encontrado el elemento
+        if (array[mitad] === elemento) {
+            return mitad
+        } else if (array[mitad] < elemento) {
+            // si el elemento de la mitad es menor que
+            // el elemento que estamos buscando
+            // entonces tenemos que buscar en la mitad derecha
+            index = mitad + 1
+        } else {
+            // si el elemento de la mitad es mayor que
+            // el elemento que estamos buscando
+            // entonces tenemos que buscar en la mitad izquierda
+            final = mitad - 1
+        }
+    }
+
+    // si llegamos hasta aquí, es que no hemos encontrado el elemento
+    // devolvemos -1, para indicar que no se ha encontrado
+    return -1
+}
+
+/*  --------------------------------------------------------- EJERCICIO PRACTICO
+En una biblioteca queremos saber qué libro es el que menos páginas tiene y el que más páginas. Por suerte, no hay dos libros con el mismo número de páginas.
+Necesitamos que la función reciba un array de números, sin ordenar, y que devuelva un array de dos posiciones con el índice del libro con menos páginas y el índice del libro con más páginas.*/
+
+const numberPages = [32, 5, 502, 41, 12, 77, 64, 3, 59, 14, 88, 26, 47, 90, 53, 1]
+const bookMinusMax = []
+
+minusPages = numberPages[0]
+maxPages = numberPages[0]
+
+for (i = 0; i < numberPages.length; i++) {
+    if (numberPages[i] > maxPages) {
+        maxPages = numberPages[i]
+    } else if (numberPages[i] < minusPages) {
+        minusPages = numberPages[i]
+    }
+}
+
+bookMinusMax.push(minusPages, maxPages)
+console.log(bookMinusMax)
+
+// Ejercicio como funcion
+
+const words = [32, 5, 502, 41, 12, 77, 64, 3, 59, 14, 88, 26, 47, 90, 53, 1]
+
+function minAndMaxWord(words) {
+    let minusPages = words[0]
+    let maxPages = words[0]
+    const bookMinusMax = []
+
+    for (let i = 0; i < words.length; i++) {
+        if (words[i] > maxPages) {
+            maxPages = words[i]
+        } else if (words[i] < minusPages) {
+            minusPages = words[i]
+        }
+    }
+
+    const maxPosition = words.indexOf(maxPages)
+    const minusPosition = words.indexOf(minusPages)
+
+    bookMinusMax.push(minusPosition, maxPosition)
+    return(bookMinusMax)
+}
+
+console.log(minAndMaxWord(words))
 
 
