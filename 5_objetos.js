@@ -89,3 +89,18 @@ father: 'Juan'
 
 ¡Ojo! El método getStatus debe devolver el texto, NO imprimirlo por consola. */
 
+function createObject(name, subscribers) {
+    const data = { name, subscribers }
+
+    let objectNameLength = data.name.length * subscribers // 80
+    data.hash = objectNameLength
+
+    data.getStatus = function () {
+    return (`El canal de ${this.name} tiene ${this.subscribers} suscriptores`)
+
+    }
+    return data
+}
+
+
+
