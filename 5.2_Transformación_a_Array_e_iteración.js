@@ -28,7 +28,7 @@ entries.forEach(entry => {
 })
 
 
-// POdemos acceder tanto a las propiedades como a los valores
+// Podemos acceder tanto a las propiedades como a los valores
 const entrie = Object.entries(spiderman)
 
 entries.forEach(entry => {
