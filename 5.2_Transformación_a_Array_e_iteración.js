@@ -50,22 +50,18 @@ for (const property in ob) {
         arrayValue.push(property)
     }
 }
-
 console.log(arrayValue)
 
 function getKeysOfBooleanValues(obj) {
     const arrayValue = []
 
-    for (const property in obj) {
-        if (obj[property] == true || obj[property] == false) {
-            arrayValue.push(property)
-        } else {
-            return []
+    for (const clave in obj) {
+        if (obj[clave] === true || obj[clave] === false) {
+            arrayValue.push(clave)
         }
     }
     return arrayValue
 }
-
-console.log(getKeysOfBooleanValues({ a: true, b: 2, c: false }))
+console.log(getKeysOfBooleanValues({ a: 1, b: 2, c: 3 }))
 
 
