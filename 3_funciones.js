@@ -129,7 +129,7 @@ calcular(10, 2, function (a, b) {
 // O usando funciones flecha (las veremos más adelante)
 calcular(4, 3, (a, b) => a ** b) // El resultado es: 64 (4 elevado a 3)
 
-/*  --------------------------------------------------------- FUNCIONES EXPRESSION */
+/*  --------------------------------------------------------- FUNCIONES ANONIMAS */
 
 const funtionExpressionSum = function (a, b) {
     return a + b

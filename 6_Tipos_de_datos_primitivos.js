@@ -1,5 +1,7 @@
 // Tipos de datos primitivos
 
+// Todos los tipos primitivos son inmutables
+
 /* 
 string - cadenas de texto
 number - números
