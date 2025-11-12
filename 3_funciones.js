@@ -1,5 +1,3 @@
-/*  --------------------------------------------------------- FUNCIONES */
-
 // Bloque de codigo que realiza una tarea especifica cuando se llama 
 
 function saludo() {
@@ -34,108 +32,16 @@ function getRandomNumeber() {
     return result
 }
 
-console.log("Numero aleatorio entre 1 y 10 " + getRandomNumeber())
+console.log("Numero aleatorio entre 1 y 10 es " + getRandomNumeber())
 
 /*  --------------------------------------------------------- PARAMETROS */
 
-function saludar(nombre) {
-    console.log("Hola, " + nombre)
-}
 
-saludar("MIKE")
-saludar("Guts")
 
-// Se pueden designar varios parametros
 
-function suma(a, b) { // Dos PARAMETROS, a y b
-    return a + b
-}
 
-function resta(a, b) {
-    return a - b
-}
 
-const resultadoSuma = suma(2, 5) // dos ARGUMENTOS, 2 y 5
-console.log("La suma de ambos numeros es " + resultadoSuma)
 
-const resultadoResta = resta(2, 5)
-console.log("La suma de ambos numeros es " + resultadoResta)
-
-// Funciones como parametro
-
-function sumar(a, b) {
-    return a + b
-}
-
-function multiplicar(a, b) {
-    return a * b
-}
-
-function restar(a, b) {
-    return a - b
-}
-
-console.log("La multiplicacion es " + multiplicar(8, 7))
-
-// Función que recibe una operación como parámetro
-
-function calcular(num1, num2, operacion) {
-    const resultado = operacion(num1, num2)
-    console.log('El resultado es: ' + resultado)
-    return resultado
-}
-
-// Usamos diferentes operaciones
-calcular(5, 3, sumar)       // El resultado es: 8
-calcular(5, 3, multiplicar) // El resultado es: 15
-calcular(5, 3, restar)      // El resultado es: 2
-
-//Ejercicios
-
-function decirAdios() {
-    return "Adios!"
-}
-
-const miFn = decirAdios // se pasa la referencia a la funcion
-
-console.log(decirAdios())
-console.log(miFn())
-
-// funcion a otra funcion 
-
-function dup(n) {
-    return n * 2
-}
-
-function div(n) {
-    return n / 2
-}
-
-function aplicarYMostrar(valor, operacion) {
-    const r = operacion(valor) // La funcion llega como argumento desde afuera
-    console.log("Resultado:", r)
-}
-
-aplicarYMostrar(4, dup)
-
-/*  --------------------------------------------------------- FUNCIONES ANONIMAS COMO PARAMETROS */
-
-// Función anónima pasada directamente
-calcular(10, 2, function (a, b) {
-    return a / b
-})
-// El resultado es: 5
-
-// O usando funciones flecha (las veremos más adelante)
-calcular(4, 3, (a, b) => a ** b) // El resultado es: 64 (4 elevado a 3)
-
-/*  --------------------------------------------------------- FUNCIONES ANONIMAS */
-
-const funtionExpressionSum = function (a, b) {
-    return a + b
-} // No es necesario darle un nombre a la funcion
-
-console.log(funtionExpressionSum(1, 2))
 
 /*  --------------------------------------------------------- FUNCIONES FLECHA */
 
