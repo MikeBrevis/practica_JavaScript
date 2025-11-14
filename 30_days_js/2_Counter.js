@@ -8,27 +8,30 @@ var createCounter = function(n) {
     function increment() {
         const actual = cont
         cont++
-        console.log(actual)
         return actual
     }
-
     return increment
 }
 
 const counter = createCounter(10)
-counter() // 10
-counter() // 11
-counter() // 12
 
+console.log(counter()) // 10
+console.log(counter()) // 11
+console.log(counter()) // 12
 
+//
 var createCounter2 = function (n) {
-
     return function () {
-        return console.log(n++)
+        return n++
     }
 }
+
 const c1 = createCounter2(2)
-c1()//2
-c1()//3
-c1()//4
+console.log(c1())//2
+console.log(c1())//3
+console.log(c1())//4
+
+
+
+
 
