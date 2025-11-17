@@ -60,5 +60,22 @@ ul {
     background-color: #FF7b0f;
 }
 
+#pagina {
+    font-size: 2rem;
+    width: 90%;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #FF7b0f;
+    color: #fff;
+    border: solid 2px #000;
+    margin: 20px 0;
+}
+/* clase añadida con js */
+.texto-verde { 
+    color: green;
+}
+
+
 
 
