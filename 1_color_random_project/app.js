@@ -1,11 +1,11 @@
-// Seleccionar elementos desde el DOM: llamar al boton y al texto
+// Seleccionar elementos desde el DOM: llamar al boton y al texto con getElementById
 const boton = document.getElementById("boton-color")
-console.log(boton)
 
 const color = document.getElementById("color")
-console.log(color)
 
-// enerar una funcion que maneje el proceso de generar un color al azar
+const textColor = document.getElementById("color")
+
+// Generar una funcion que maneje el proceso de generar un color al azar
 
 function generarColor() {
     let digitos = "0123456789ABCDEF"; // Cadena de caracteres con todos los digitos posibles para generar el color (0-9: A-F)
@@ -18,8 +18,18 @@ function generarColor() {
     return colorHex
 }
 
-console.log(generarColor())
+// Se busca asociar la funcion cuando se haga click en el boton
 
+boton.addEventListener("click", function() {
+    // llamar con una variable a la funcion que genera el codigo
+    let hexColor = generarColor()
+
+    //actualizar color
+    color.textContent = hexColor
+    color.style.color = hexColor
+    boton.style.backgroundColor = hexColor
+    document.body.style.background = hexColor
+})
 
 
 
