@@ -1,8 +1,6 @@
 // Seleccionar elementos desde el DOM: llamar al boton y al texto con getElementById
 const boton = document.getElementById("boton-color")
-
 const color = document.getElementById("color")
-
 const textColor = document.getElementById("color")
 
 // Generar una funcion que maneje el proceso de generar un color al azar

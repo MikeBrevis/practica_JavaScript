@@ -24,7 +24,7 @@ body {
 .contenedor {
     width: 80vw;
     max-width: 600px;
-    min-height: 500px;
+    min-height: 400px;
     padding: 20px;
     background-color: white;
     border: 5px solid black;

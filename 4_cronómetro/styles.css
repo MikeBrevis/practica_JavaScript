@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background-image: url('img/clock.jpg');
+}
+
+.contenedor-principal {
+    width: 80vw;
+    max-width: 600px;
+    min-height: 350px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: aliceblue;
+    border-bottom: 10px;
+    border: 5px solid black;
+}
+
+.contenedor-botones {
+    padding: 20px;
+}
+
+#cronometro {
+    width: 100%;
+    font-size: 80px;
+    font-weight: bold;
+    user-select: none;
+    font-family: "Noto Sans", sans-serif;
+}
+
+.boton {
+    width: 80px;
+    height: 80px;
+    margin: 10px;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.iniciar {
+    background-color: greenyellow;
+}
+
+.reiniciar {
+    background-color: red;
+}
