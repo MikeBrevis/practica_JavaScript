@@ -1,26 +1,27 @@
 const cronometro = document.getElementById("cronometro")
-
 let totalSegundos = 0
 
-
-
 setInterval(function () {
-    totalSegundos ++
-    cronometro.innerText = totalSegundos
+    totalSegundos++
+    texto = formatearTiempo(totalSegundos)
+    cronometro.innerText = texto
 }, 1000)
 
+function formatearTiempo(se) {
+    let segundos = se % 60
+    let minutos = Math.floor((se % 3600) / 60)
+    let horas = Math.floor(se / 3600)
 
-function formatearTiempo(totalSegundos) {
-    let segundos = totalSegundos % 60 
-    let minutos = Math.floor((totalSegundos % 3600) / 60) 
-    let horas = Math.floor(totalSegundos / 3600)
+    let s = String(segundos).padStart(2, "0")
+    let m = String(minutos).padStart(2, "0")
+    let h = String(horas).padStart(2, "0")
 
-    
-
-    return `${horas}:${minutos}:${segundos}`
+    return `${h}:${m}:${s}`
 }
 
-console.log(formatearTiempo(500500))
+
+
+
 
 
 
