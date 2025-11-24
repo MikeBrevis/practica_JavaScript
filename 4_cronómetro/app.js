@@ -1,6 +1,7 @@
 const cronometro = document.getElementById("cronometro")
 const botonInicioPausa = document.getElementById("boton-inicio-pausa")
 const botonReiniciar = document.getElementById("boton-reiniciar")
+let interval = null
 
 let totalSegundos = 0
 
@@ -27,8 +28,6 @@ function pausar() {
     botonInicioPausa.classList.add("pausar")
     botonInicioPausa.innerHTML = '<i class="bi bi-pause-fill"></i>'
 }
-
-let interval = null
 
 botonInicioPausa.addEventListener("click", function () {
 

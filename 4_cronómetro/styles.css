@@ -48,6 +48,11 @@ body {
     cursor: pointer;
 }
 
+.boton:active {
+    transform: scale(0.90);
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+}
+
 .iniciar {
     background-color: greenyellow;
 }
