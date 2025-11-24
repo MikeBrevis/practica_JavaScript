@@ -1,11 +1,8 @@
 const cronometro = document.getElementById("cronometro")
-let totalSegundos = 0
+const botonInicioPausa = document.getElementById("boton-inicio-pausa")
+const botonReiniciar = document.getElementById("boton-reiniciar")
 
-setInterval(function () {
-    totalSegundos++
-    texto = formatearTiempo(totalSegundos)
-    cronometro.innerText = texto
-}, 1000)
+let totalSegundos = 0
 
 function formatearTiempo(se) {
     let segundos = se % 60
@@ -18,6 +15,52 @@ function formatearTiempo(se) {
 
     return `${h}:${m}:${s}`
 }
+
+function iniciar() {
+    botonInicioPausa.classList.remove("pausar")
+    botonInicioPausa.classList.add("iniciar")
+    botonInicioPausa.innerHTML = '<i class="bi bi-play-fill"></i>'
+}
+
+function pausar() {
+    botonInicioPausa.classList.remove("iniciar")
+    botonInicioPausa.classList.add("pausar")
+    botonInicioPausa.innerHTML = '<i class="bi bi-pause-fill"></i>'
+}
+
+let interval = null
+
+botonInicioPausa.addEventListener("click", function () {
+
+    if (interval === null) {
+        interval = setInterval(function () {
+            totalSegundos++
+            cronometro.innerText = formatearTiempo(totalSegundos)
+        }, 1000)
+
+        pausar()
+
+    } else {
+        clearInterval(interval)
+        interval = null
+        iniciar()
+    }
+})
+
+botonReiniciar.addEventListener("click", function () {
+    clearInterval(interval)
+    interval = null
+    totalSegundos = 0
+    cronometro.innerText = "00:00:00"
+    iniciar()
+})
+
+
+
+
+
+
+
 
 
 

@@ -52,6 +52,10 @@ body {
     background-color: greenyellow;
 }
 
+.pausar {
+    background-color: yellow;
+}
+
 .reiniciar {
     background-color: red;
 }
