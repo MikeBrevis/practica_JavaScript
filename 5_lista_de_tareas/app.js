@@ -2,22 +2,35 @@ const ingresarTarea = document.getElementById("ingresar-tarea")
 const crearTarea = document.getElementById("boton-crear")
 const listaTareas = document.getElementById("lista-de-tareas")
 
-crearTarea.addEventListener("click", function () {
+function nuevaTarea() {
     const texto = ingresarTarea.value.trim()
+    const div = document.createElement("div")
+    div.classList.add("tarea")
+    listaTareas.prepend(div)
 
-    if (texto == "") {
+    const inp = document.createElement("input")
+    inp.setAttribute("type", "checkbox")
+    div.appendChild(inp)
+
+    const p = document.createElement("p")
+    p.textContent = texto
+    div.appendChild(p)
+}
+
+crearTarea.addEventListener("click", function () {
+
+    if (ingresarTarea.value == "") {
         alert("ingrese una tarea")
         ingresarTarea.focus()
         return
     }
 
-    const p = document.createElement("p")
-    p.textContent = texto
-    listaTareas.prepend(p) // Agrega la tarea al inicio
-
-    ingresarTarea.value = ""
-    ingresarTarea.focus()
+    nuevaTarea()
 })
+
+
+
+
 
 
 
