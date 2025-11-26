@@ -2,6 +2,8 @@ const ingresarTarea = document.getElementById("ingresar-tarea")
 const crearTarea = document.getElementById("boton-crear")
 const listaTareas = document.getElementById("lista-de-tareas")
 const eliminarTarea = document.querySelector(".trash")
+const tareaIndividual = document.querySelector(".tarea")
+
 
 function nuevaTarea() {
     const texto = ingresarTarea.value.trim()
@@ -38,12 +40,25 @@ crearTarea.addEventListener("click", function () {
 })
 
 listaTareas.addEventListener("click", function (e) {
-
     if (e.target.classList.contains("trash")) {
         let eliminarTarea = e.target.closest(".tarea")
         eliminarTarea.remove()
     }
+
+    let tareaCompleta = e.target.closest(".tarea")
+
+    if (e.target.checked === true) {
+        tareaCompleta.classList.add("completa")
+
+    } else {
+        tareaCompleta.classList.remove("completa")
+    }
 })
+
+
+
+
+
 
 
 

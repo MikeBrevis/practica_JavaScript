@@ -89,6 +89,11 @@ h1 {
     }
 }
 
+.completa {
+    text-decoration: line-through;
+    color: gray;
+}
+
 .trash {
     font-size: 25px;
     margin-left: auto;
